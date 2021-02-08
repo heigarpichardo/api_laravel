@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Marca;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
 class MarcaController extends Controller
@@ -14,7 +15,8 @@ class MarcaController extends Controller
      */
     public function index()
     {
-        //
+        $result = Model::all();
+        return $result;
     }
 
     /**
