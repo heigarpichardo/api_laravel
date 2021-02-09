@@ -15,8 +15,8 @@ class MarcaController extends Controller
      */
     public function index()
     {
-        $result = Model::all();
-        return $result;
+        $result = Marca::all();
+        return $result->toJson();
     }
 
     /**
@@ -46,9 +46,10 @@ class MarcaController extends Controller
      * @param  \App\Marca  $marca
      * @return \Illuminate\Http\Response
      */
-    public function show(Marca $marca)
+    public function show($id)
     {
-        //
+        $result = Marca::all()->find($id);
+        return $result->toJson();
     }
 
     /**
