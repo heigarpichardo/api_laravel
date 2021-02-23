@@ -22,4 +22,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 /*
     Marca
 */
-Route::resource('Marca', 'MarcaController',[ 'only' => ['index','show']]);
+Route::resource('Brands', 'BrandsController',[ 'only' => ['index','show']]);
