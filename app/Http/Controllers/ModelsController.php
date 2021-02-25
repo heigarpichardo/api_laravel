@@ -14,7 +14,8 @@ class ModelsController extends Controller
      */
     public function index()
     {
-        //
+        $result = Models::all();
+        return $result->toJson();
     }
 
     /**
@@ -44,9 +45,16 @@ class ModelsController extends Controller
      * @param  \App\Models  $models
      * @return \Illuminate\Http\Response
      */
-    public function show(Models $models)
+    public function show($id)
     {
-        //
+        $result = Models::find($id);
+        return $result->toJson();
+    }
+
+    public function showbybrand($idbrand)
+    {
+        $result = Models::where("idbrand",$idbrand);
+        return $result->toJson();
     }
 
     /**

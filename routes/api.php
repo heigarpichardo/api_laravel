@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-/*
-    Marca
-*/
+//Marca
 Route::resource('Brands', 'BrandsController',[ 'only' => ['index','show']]);
+//Modelos
+Route::resource('Models', 'ModelsController',[ 'only' => ['index','show']]);

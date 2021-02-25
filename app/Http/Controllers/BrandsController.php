@@ -47,7 +47,7 @@ class BrandsController extends Controller
      */
     public function show($id)
     {
-        $result = Brands::all()->find($id);
+        $result = Brands::find($id);
         return $result->toJson();
     }
 
