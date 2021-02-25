@@ -45,7 +45,7 @@ class ModelsController extends Controller
      * @param  \App\Models  $models
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Response $Response, $id)
     {
         $result = Models::find($id);
         return $result->toJson();
@@ -53,7 +53,7 @@ class ModelsController extends Controller
 
     public function showbybrand($idbrand)
     {
-        $result = Models::where("idbrand",$idbrand);
+        $result = Models::where("idbrand",$idbrand)->get();
         return $result->toJson();
     }
 
