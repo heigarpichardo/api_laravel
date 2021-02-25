@@ -23,3 +23,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('Brands', 'BrandsController',[ 'only' => ['index','show']]);
 //Modelos
 Route::resource('Models', 'ModelsController',[ 'only' => ['index','show']]);
+Route::get('Models/showbybrand/{id}', 'ModelsController@showbybrand');
