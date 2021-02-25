@@ -45,7 +45,7 @@ class ModelsController extends Controller
      * @param  \App\Models  $models
      * @return \Illuminate\Http\Response
      */
-    public function show(Response $Response, $id)
+    public function show($id)
     {
         $result = Models::find($id);
         return $result->toJson();
