@@ -55,7 +55,7 @@ class ModelsController extends Controller
     {
         $result = Models::where("idbrand",$idbrand)->get();
         //return $result->toJson();
-        return response($result->toJson(), 200);
+        return response()->json($result);
     }
 
     /**
