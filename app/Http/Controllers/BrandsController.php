@@ -62,6 +62,12 @@ class BrandsController extends Controller
         //return response()->json($result);
         return var_dump($brand);
     }
+
+    public function showbybrand()
+    {
+        $result = Brands::all();        
+        return response()->json($result);
+    }
     /**
      * Show the form for editing the specified resource.
      *
