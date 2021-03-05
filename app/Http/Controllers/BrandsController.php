@@ -59,7 +59,8 @@ class BrandsController extends Controller
             $result = Brands::where("brand",'like','%'.$brand.'%')->get();
         }
         
-        return response()->json($result);
+        //return response()->json($result);
+        return var_dump($brand);
     }
     /**
      * Show the form for editing the specified resource.
