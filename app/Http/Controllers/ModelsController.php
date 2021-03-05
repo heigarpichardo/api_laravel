@@ -15,7 +15,7 @@ class ModelsController extends Controller
     public function index()
     {
         $result = Models::all();
-        return $result->toJson();
+        return response()->json($result);
     }
 
     /**
@@ -48,7 +48,7 @@ class ModelsController extends Controller
     public function show($id)
     {
         $result = Models::find($id);
-        return $result->toJson();
+        return response()->json($result);
     }
 
     public function showbybrand($idbrand)

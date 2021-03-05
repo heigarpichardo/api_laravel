@@ -48,9 +48,15 @@ class BrandsController extends Controller
     public function show($id)
     {
         $result = Brands::find($id);
-        return $result->toJson();
+        return response()->json($result);
     }
 
+    public function showbybrand($brand)
+    {
+        $result = Models::where("brand",'like','%'.$brand.'%')->get();
+        //return $result->toJson();
+        return response()->json($result);
+    }
     /**
      * Show the form for editing the specified resource.
      *
