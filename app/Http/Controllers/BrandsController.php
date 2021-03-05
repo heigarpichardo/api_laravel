@@ -54,7 +54,7 @@ class BrandsController extends Controller
     public function showbybrand($brand)
     {
         if (empty($brand)) {
-            $result = Brands::all()->latest()->take(5)->get();
+            $result = Brands::all();
         } else {
             $result = Brands::where("brand",'like','%'.$brand.'%')->get();
         }
