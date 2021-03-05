@@ -51,7 +51,7 @@ class BrandsController extends Controller
         return response()->json($result);
     }
 
-    public function showbybrand($brand)
+    public function showbybrand($brand = "")
     {
         if (empty($brand) || is_null($brand)) {
             $result = Brands::all();
@@ -63,11 +63,6 @@ class BrandsController extends Controller
         return var_dump($brand);
     }
 
-    public function showbybrand()
-    {
-        $result = Brands::all();        
-        return response()->json($result);
-    }
     /**
      * Show the form for editing the specified resource.
      *
