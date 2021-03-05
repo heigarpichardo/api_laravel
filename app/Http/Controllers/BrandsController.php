@@ -53,8 +53,12 @@ class BrandsController extends Controller
 
     public function showbybrand($brand)
     {
-        $result = Brands::where("brand",'like','%'.$brand.'%')->get();
-        //return $result->toJson();
+        if (empty($brand)) {
+            $result = Brands::all()->latest()->take(5)->get();
+        } else {
+            $result = Brands::where("brand",'like','%'.$brand.'%')->get();
+        }
+        
         return response()->json($result);
     }
     /**
