@@ -24,5 +24,4 @@ Route::resource('Brands', 'BrandsController',[ 'only' => ['index','show']]);
 //Modelos
 Route::resource('Models', 'ModelsController',[ 'only' => ['index','show']]);
 Route::get('Models/showbybrand/{id}', 'ModelsController@showbybrand');
-Route::get('Brands/showbybrand/{brand}', 'BrandsController@showbybrand');
-Route::get('Brands/showbybrand', 'BrandsController@showbybrand');
+Route::get('Brands/showbybrand/{brand?}', 'BrandsController@showbybrand');
