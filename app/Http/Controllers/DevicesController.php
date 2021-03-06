@@ -34,8 +34,11 @@ class DevicesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   
+        //"MAC","publicIP","localIP","ticketprinter","normalprinter"
+        $result = Devices::create($request->all());
+
+        return responce()->json($result, 201);
     }
 
     /**
