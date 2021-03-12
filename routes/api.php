@@ -19,12 +19,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//Marca
+//Brands
 Route::resource('Brands', 'BrandsController',[ 'only' => ['index','show']]);
-//Modelos
+//Models
 Route::resource('Models', 'ModelsController',[ 'only' => ['index','show']]);
 Route::get('Models/showbybrand/{id}', 'ModelsController@showbybrand');
 Route::get('Brands/showbybrand/{brand?}', 'BrandsController@showbybrand');
 
-//Device
+//Devices
 Route::resource('Devices', 'DevicesController');
+//Colors
+Route::resource('Colors', 'ColorsController');

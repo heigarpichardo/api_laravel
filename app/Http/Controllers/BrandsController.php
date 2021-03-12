@@ -15,7 +15,7 @@ class BrandsController extends Controller
     public function index()
     {
         $result = Brands::all();
-        return $result->toJson();
+        return response()->json($result);
     }
 
     /**

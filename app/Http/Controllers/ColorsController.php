@@ -14,7 +14,8 @@ class ColorsController extends Controller
      */
     public function index()
     {
-        //
+        $result = Colors::all();
+        return response()->json($result);
     }
 
     /**
