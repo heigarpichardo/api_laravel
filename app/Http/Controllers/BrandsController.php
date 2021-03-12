@@ -55,7 +55,7 @@ class BrandsController extends Controller
     {
         
         $result = Brands::where("brand",'like','%'.$brand.'%')->get(); 
-        return response()->json($result);
+        return response()->json($result, 200);
         //return var_dump($brand);
     }
 
