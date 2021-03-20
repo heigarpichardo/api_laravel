@@ -13,8 +13,8 @@ class VehiclesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { 
-        $result = vehicles::all();
+    {
+        $result = Vehicles::all();
         return response()->json($result);
     }
 
@@ -36,7 +36,9 @@ class VehiclesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $result = Vehicles::create($request->all());
+
+        return response()->json($result, 201);
     }
 
     /**
@@ -45,9 +47,10 @@ class VehiclesController extends Controller
      * @param  \App\Vehicles  $vehicles
      * @return \Illuminate\Http\Response
      */
-    public function show(Vehicles $vehicles)
+    public function show($id)
     {
-        //
+        $result = Vehicles::find($id);;
+        return response()->json($result);
     }
 
     /**
