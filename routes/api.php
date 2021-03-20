@@ -35,3 +35,6 @@ Route::resource('Colors', 'ColorsController',[ 'only' => ['index','show','store'
 
 //Vehicles
 Route::resource('Vehicles', 'VehiclesController',[ 'only' => ['index','show','store']]);
+
+//Tickets
+Route::resource('Tickets', 'TicketsController',[ 'only' => ['index','show','store']]);
