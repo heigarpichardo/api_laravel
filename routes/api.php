@@ -21,6 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 //Brands
 Route::resource('Brands', 'BrandsController',[ 'only' => ['index','show']]);
+
 //Models
 Route::resource('Models', 'ModelsController',[ 'only' => ['index','show']]);
 Route::get('Models/showbybrand/{id}', 'ModelsController@showbybrand');
@@ -30,3 +31,5 @@ Route::get('Brands/showbybrand/{brand?}', 'BrandsController@showbybrand');
 Route::resource('Devices', 'DevicesController');
 //Colors
 Route::resource('Colors', 'ColorsController');
+//Vehicles
+Route::resource('Vehicles', 'VehiclesController');

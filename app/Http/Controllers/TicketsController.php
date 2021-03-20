@@ -14,7 +14,8 @@ class TicketsController extends Controller
      */
     public function index()
     {
-        //
+        $result = Tickets::all();
+        return response()->json($result);
     }
 
     /**

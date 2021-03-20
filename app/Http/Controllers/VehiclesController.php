@@ -13,8 +13,9 @@ class VehiclesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    { 
+        $result = vehicles::all();
+        return response()->json($result);
     }
 
     /**
