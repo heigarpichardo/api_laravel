@@ -54,7 +54,6 @@ class ModelsController extends Controller
     public function showbybrand($idbrand)
     {
         $result = Models::where("idbrand",$idbrand)->get();
-        //return $result->toJson();
         return response()->json($result);
     }
 

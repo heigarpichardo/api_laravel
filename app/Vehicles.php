@@ -8,7 +8,7 @@ class Vehicles extends Model
 {
     protected $table = "Vehicles";
     protected $primaryKey = "idvehicle";
-    protected $fillable = ["plate","idcostumer","idmodel","idcolor","idcategory",
+    protected $fillable = ["plate","idcostumer","idmodel","idcolor","idcategory","year",
                             "monthlypayment","join_date","assigned_number"];
 
     public $incrementing = true;

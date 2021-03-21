@@ -38,3 +38,6 @@ Route::resource('Vehicles', 'VehiclesController',[ 'only' => ['index','show','st
 
 //Tickets
 Route::resource('Tickets', 'TicketsController',[ 'only' => ['index','show','store']]);
+
+//Category
+Route::resource('Category', 'CategoryController',[ 'only' => ['index','show','store']]);
