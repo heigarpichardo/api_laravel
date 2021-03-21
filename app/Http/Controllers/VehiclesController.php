@@ -37,7 +37,6 @@ class VehiclesController extends Controller
     public function store(Request $request)
     {
         $result = Vehicles::create($request->all());
-
         return response()->json($result, 201);
     }
 
@@ -52,6 +51,20 @@ class VehiclesController extends Controller
         $result = Vehicles::find($id);;
         return response()->json($result);
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Vehicles  $vehicles
+     * @return \Illuminate\Http\Response
+     */
+    
+     public function showbyplate($plate)
+    {
+        $result = Vehicles::where("plate",$plate)->get();;;
+        return response()->json($result);
+    }
+
 
     /**
      * Show the form for editing the specified resource.

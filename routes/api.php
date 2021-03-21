@@ -21,7 +21,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 //Brands
 Route::resource('Brands', 'BrandsController',[ 'only' => ['index','show','store']]);
-Route::get('Brands/showbybrand/{brand?}', 'BrandsController@showbybrand');
 
 //Models
 Route::resource('Models', 'ModelsController',[ 'only' => ['index','show','store']]);
@@ -35,6 +34,7 @@ Route::resource('Colors', 'ColorsController',[ 'only' => ['index','show','store'
 
 //Vehicles
 Route::resource('Vehicles', 'VehiclesController',[ 'only' => ['index','show','store']]);
+Route::get('Vehicles/showbyplate/{plate}', 'VehiclesController@showbyplate');
 
 //Tickets
 Route::resource('Tickets', 'TicketsController',[ 'only' => ['index','show','store']]);
