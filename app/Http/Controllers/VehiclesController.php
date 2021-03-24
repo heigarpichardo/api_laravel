@@ -62,6 +62,11 @@ class VehiclesController extends Controller
     public function showbyplate($plate)
     {
         $result = Vehicles::firstWhere("plate",$plate);;;
+
+        if (is_null($result)) {
+            return response()->json($result,204);    
+        }
+
         return response()->json($result);
     }
 
