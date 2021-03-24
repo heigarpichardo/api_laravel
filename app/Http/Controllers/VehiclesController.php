@@ -34,9 +34,9 @@ class VehiclesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $result = Vehicles::create($request->all());
+    public function store(Request $request, Vehicles $vehicles)
+    {   
+        $result = Vehicles::firstOrCreate($request->all());
         return response()->json($result, 201);
     }
 
@@ -59,9 +59,9 @@ class VehiclesController extends Controller
      * @return \Illuminate\Http\Response
      */
     
-     public function showbyplate($plate)
+    public function showbyplate($plate)
     {
-        $result = Vehicles::where("plate",$plate)->get();;;
+        $result = Vehicles::firstWhere("plate",$plate);;;
         return response()->json($result);
     }
 
