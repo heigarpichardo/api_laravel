@@ -38,7 +38,11 @@ class TicketsController extends Controller
      */
     public function store(Request $request)
     {
-        $vehicle = Vehicles::firstOrCreate($request->all());
+        $vehicle = Vehicles::find($request->idvehicle);
+
+        if ( is_null($vehicle)) {
+            return response()->json($vehicle, 204);
+        }
 
         $result = Tickets::create([
             "ticketnumber"  => 'TCK-00000001',
