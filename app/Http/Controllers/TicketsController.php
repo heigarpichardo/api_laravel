@@ -48,7 +48,7 @@ class TicketsController extends Controller
             "ticketnumber"  => 'TCK-00000001',
             "idvehicle"     => $vehicle->idvehicle,
             "join_datetime" => Carbon::now(),
-            "exit_datetime" => '',
+            "exit_datetime" => Carbon::create(1900,01,01),
             "total_ticket"  => 0.00,
             "iduser"        => 0,
             "iddailyclose"  => 0
