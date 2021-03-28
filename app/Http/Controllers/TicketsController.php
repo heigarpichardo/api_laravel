@@ -44,8 +44,16 @@ class TicketsController extends Controller
             return response()->json($vehicle, 204);
         }
 
+        $vehicle->idcostumer    = $request->idcostumer;
+        $vehicle->idmodel       = $request->idmodel;
+        $vehicle->idcolor       = $request->idcolor;
+        $vehicle->idcategory    = $request->idcategory;
+        $vehicle->year          = $request->year;
+
+        $vehicle->save();
+
         $result = Tickets::create([
-            "ticketnumber"  => 'TCK-00000001',
+            "ticketnumber"  => Tickets::getTicketNumber(),
             "idvehicle"     => $vehicle->idvehicle,
             "join_datetime" => Carbon::now(),
             "exit_datetime" => Carbon::create(1900,01,01),

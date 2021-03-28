@@ -13,4 +13,10 @@ class Tickets extends Model
 
     public $incrementing = true;
     public $timestamps = false;
+
+    public static function getTicketNumber()
+    {
+        return 'TCK-' + substr(str_repeat(0, 10).Tickets::all()->max('idticket'), - 10);
+    }
+
 }
