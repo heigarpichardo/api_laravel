@@ -16,7 +16,7 @@ class Tickets extends Model
 
     public static function getTicketNumber()
     {
-        return 'TCK-' + substr(str_repeat(0, 10).Tickets::all()->max('idticket'), - 10);
+        return 'TCK-'.substr(str_repeat(0, 10).parse_str(Tickets::all()->max('idticket')), - 10);
     }
 
 }
