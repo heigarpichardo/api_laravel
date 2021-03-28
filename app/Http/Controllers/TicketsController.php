@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Vehicles;
 use App\Tickets;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class TicketsController extends Controller
 {
@@ -36,7 +38,19 @@ class TicketsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $vehicle = Vehicles::firstOrCreate($request->all());
+
+        $result = Tickets::create([
+            "ticketnumber"  => 'TCK-00000001',
+            "idvehicle"     => $vehicle->idvehicle,
+            "join_datetime" => Carbon::now(),
+            "exit_datetime" => '',
+            "total_ticket"  => 0.00,
+            "iduser"        => 0,
+            "iddailyclose"  => 0
+        ]);
+
+        return response()->json($result, 201);
     }
 
     /**
